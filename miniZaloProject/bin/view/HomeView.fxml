@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.HomeController"
+            style="-fx-background-color: linear-gradient(to bottom, #0D47A1, #1976D2);">
+
+    <!-- Thanh điều hướng trên cùng -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #0D47A1; -fx-padding: 10;">
+            <Label text="miniZalo" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="viewFriendsButton" text="Danh Sách Bạn Bè" style="-fx-background-color: #64B5F6; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 5 15;"/>
+            <Button fx:id="createGroupButton" text="Tạo Nhóm" style="-fx-background-color: #64B5F6; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 5 15;"/>
+            <Button fx:id="settingsButton" text="Cài Đặt" style="-fx-background-color: #64B5F6; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 5 15;"/>
+            <Button fx:id="logoutButton" text="Đăng Xuất" style="-fx-background-color: #B0BEC5; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 5 15;"/>
+        </HBox>
+    </top>
+
+    <!-- Nội dung chính -->
+    <center>
+        <HBox spacing="15" alignment="CENTER" style="-fx-padding: 15;">
+            <!-- Danh sách người dùng trực tuyến và bạn bè -->
+            <VBox alignment="TOP_CENTER" spacing="10" style="-fx-background-color: #E3F2FD; -fx-padding: 15; -fx-background-radius: 10; -fx-pref-width: 250;">
+                <Label text="Người Dùng Trực Tuyến" style="-fx-font-size: 18px; -fx-text-fill: #1A237E; -fx-font-weight: bold;"/>
+                <ListView fx:id="onlineUsersListView" style="-fx-pref-height: 200; -fx-background-color: #FFFFFF; -fx-border-color: #B3E5FC; -fx-border-radius: 5;"/>
+                <Label text="Danh Sách Bạn Bè" style="-fx-font-size: 18px; -fx-text-fill: #1A237E; -fx-font-weight: bold;"/>
+                <ListView fx:id="friendsList" style="-fx-pref-height: 200; -fx-background-color: #FFFFFF; -fx-border-color: #B3E5FC; -fx-border-radius: 5;"/>
+            </VBox>
+
+            <!-- Khu vực chat -->
+            <VBox alignment="CENTER" spacing="15" style="-fx-background-color: #FFFFFF; -fx-padding: 15; -fx-background-radius: 10; -fx-pref-width: 450;">
+                <Label text="Trò Chuyện" style="-fx-font-size: 18px; -fx-text-fill: #1A237E; -fx-font-weight: bold;"/>
+                <VBox fx:id="chatArea" style="-fx-background-color: #F5F5F5; -fx-padding: 10; -fx-border-color: #B3E5FC; -fx-border-width: 1; -fx-border-radius: 5; -fx-pref-height: 300;">
+                    <!-- Các tin nhắn sẽ được thêm vào đây -->
+                </VBox>
+                <HBox spacing="10" alignment="CENTER">
+                    <TextArea fx:id="messageInput" promptText="Nhập tin nhắn..." wrapText="true" style="-fx-pref-height: 50; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #B3E5FC; -fx-padding: 10;"/>
+                    <Button fx:id="sendButton" text="Gửi" style="-fx-background-color: #64B5F6; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10 20;"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <Label fx:id="footerLabel" text="miniZalo © 2024" alignment="CENTER"
+               style="-fx-text-fill: #E1F5FE; -fx-font-size: 12px; -fx-padding: 10; -fx-background-color: #0D47A1; -fx-text-alignment: center;"/>
+    </bottom>
+
+</BorderPane>
